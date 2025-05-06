@@ -11,7 +11,7 @@ void character_contoller(sf::RenderWindow& window);
 void game_load();
 bool check_collision(const sf::Sprite& sprite1, const sf::Sprite& sprite2);
 
-void check_borders(sf::Sprite& sprite) //проверка на границу карты
+void check_borders(sf::Sprite& sprite) //РїСЂРѕРІРµСЂРєР° РЅР° РіСЂР°РЅРёС†Сѓ РєР°СЂС‚С‹
 {
     sf::FloatRect bounds = sprite.getGlobalBounds();
     sf::Vector2f position = sprite.getPosition();
@@ -35,7 +35,7 @@ void check_borders(sf::Sprite& sprite) //проверка на границу карты
     sprite.setPosition(position);
 }
 
-void character_load() //инициализация персонажа
+void character_load() //РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РїРµСЂСЃРѕРЅР°Р¶Р°
 {
     character_texture.loadFromFile("Images/character_v2.png");
     character_sprite.setTexture(character_texture);
@@ -43,7 +43,7 @@ void character_load() //инициализация персонажа
     character_sprite.setScale(2, 2);
 }
 
-void bullet_load() //инициализация пули
+void bullet_load() //РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РїСѓР»Рё
 {
     bullet_texture.loadFromFile("Images/bullet_v2.png");
     bullet_sprite.setTexture(bullet_texture);
@@ -51,7 +51,7 @@ void bullet_load() //инициализация пули
     bullet_sprite.setScale(1, 1);
 }
 
-void enemy_deffault_load() //иницинализация и функционал обычных мобов
+void enemy_deffault_load() //РёРЅРёС†РёРЅР°Р»РёР·Р°С†РёСЏ Рё С„СѓРЅРєС†РёРѕРЅР°Р» РѕР±С‹С‡РЅС‹С… РјРѕР±РѕРІ
 {
     enemy_deffault_texture.loadFromFile("Images/deffault_enemy.png");
     enemy_deffault_sprite_1.setTexture(enemy_deffault_texture);
@@ -179,7 +179,7 @@ void enemy_deffault_load() //иницинализация и функционал обычных мобов
     }
 }
 
-void enemy_tank_load() //иницинализация и функционал мобов-танокв
+void enemy_tank_load() //РёРЅРёС†РёРЅР°Р»РёР·Р°С†РёСЏ Рё С„СѓРЅРєС†РёРѕРЅР°Р» РјРѕР±РѕРІ-С‚Р°РЅРѕРєРІ
 {
     enemy_tank_texture.loadFromFile("Images/tank_enemy.png");
     enemy_tank_sprite_1.setTexture(enemy_tank_texture);
@@ -456,7 +456,7 @@ void enemy_tank_load() //иницинализация и функционал мобов-танокв
     }
 }
 
-void enemy_spike_load() //иницинализация и функционал мобов-шипов
+void enemy_spike_load() //РёРЅРёС†РёРЅР°Р»РёР·Р°С†РёСЏ Рё С„СѓРЅРєС†РёРѕРЅР°Р» РјРѕР±РѕРІ-С€РёРїРѕРІ
 { 
     enemy_spike_texture.loadFromFile("Images/spike_enemy.png");
     enemy_spike_sprite_1.setTexture(enemy_spike_texture);
@@ -801,7 +801,7 @@ void character_contoller(sf::RenderWindow& window)
     check_borders(character_sprite);
 }
 
-void start_bullet(sf::RenderWindow& window) //выстрел
+void start_bullet(sf::RenderWindow& window) //РІС‹СЃС‚СЂРµР»
 {
     if (!bullet_active && character.get_health() > 0)
     {
@@ -814,7 +814,7 @@ void start_bullet(sf::RenderWindow& window) //выстрел
     }
 }
 
-void bullet_in_flight(sf::RenderWindow& window) //полёт пули
+void bullet_in_flight(sf::RenderWindow& window) //РїРѕР»С‘С‚ РїСѓР»Рё
 {
     if (bullet_active)
     {
@@ -828,12 +828,12 @@ void bullet_in_flight(sf::RenderWindow& window) //полёт пули
     }
 }
 
-bool check_collision(const sf::Sprite& sprite1, const sf::Sprite& sprite2) //проверка коллизии двух спрайтов
+bool check_collision(const sf::Sprite& sprite1, const sf::Sprite& sprite2) //РїСЂРѕРІРµСЂРєР° РєРѕР»Р»РёР·РёРё РґРІСѓС… СЃРїСЂР°Р№С‚РѕРІ
 {
     return sprite1.getGlobalBounds().intersects(sprite2.getGlobalBounds());
 }
 
-void score() //инициалзия текста вывода очков и жизни
+void score() //РёРЅРёС†РёР°Р»Р·РёСЏ С‚РµРєСЃС‚Р° РІС‹РІРѕРґР° РѕС‡РєРѕРІ Рё Р¶РёР·РЅРё
 {
     scoreText.setFont(font);
     scoreText.setCharacterSize(30);
@@ -848,7 +848,7 @@ void score() //инициалзия текста вывода очков и жизни
     healthText.setPosition(400, 0);
 }
 
-void next_level() //функция для закличенного респавна мобов
+void next_level() //С„СѓРЅРєС†РёСЏ РґР»СЏ Р·Р°РєР»РёС‡РµРЅРЅРѕРіРѕ СЂРµСЃРїР°РІРЅР° РјРѕР±РѕРІ
 {
 
     if (global_score == 2528*next_level_count && character.get_health() > 0)
@@ -921,9 +921,9 @@ void next_level() //функция для закличенного респавна мобов
     }
 }
 
-void game() //сама игра
+void game() //СЃР°РјР° РёРіСЂР°
 {
-    score(); //пресоздание текста
+    score(); //РїСЂРµСЃРѕР·РґР°РЅРёРµ С‚РµРєСЃС‚Р°
     back_sound_music();
     character_sprite.setPosition(float(width / 2.4), float(height - 40));
     sf::RenderWindow window(sf::VideoMode(width, height), "Space Invaders");
@@ -940,7 +940,7 @@ void game() //сама игра
                 start_bullet(window);
             }
         }
-        //персонаж жив
+        //РїРµСЂСЃРѕРЅР°Р¶ Р¶РёРІ
         if (character.get_health() > 0)
         {
             game_load();
@@ -952,7 +952,7 @@ void game() //сама игра
             timer++;
             next_level();
         }
-        //персонаж мертв
+        //РїРµСЂСЃРѕРЅР°Р¶ РјРµСЂС‚РІ
         if (character.get_health() == 0)
         {
             if (death_m == 0)
@@ -971,11 +971,11 @@ void game() //сама игра
             window.draw(scoreText);
             window.display();
         }
-        //текст очков
+        //С‚РµРєСЃС‚ РѕС‡РєРѕРІ
         std::stringstream ss;
         ss << "Score: " << global_score << "\nRound: " << next_level_count;
         scoreText.setString(ss.str());
-        //текст жизни
+        //С‚РµРєСЃС‚ Р¶РёР·РЅРё
         std::stringstream ss2;
         ss2 << "Health: " << character.get_health();
         healthText.setString(ss2.str());
@@ -993,16 +993,16 @@ void game_load()
 
 void drawFunc(sf::RenderWindow& window)
 {
-    //отрисовка персонажа и пули
+    //РѕС‚СЂРёСЃРѕРІРєР° РїРµСЂСЃРѕРЅР°Р¶Р° Рё РїСѓР»Рё
     character.set_sprite(character_sprite);
     bullet_in_flight(window);
     character.Entity_draw(window);
 
-    //отрисовка текста
+    //РѕС‚СЂРёСЃРѕРІРєР° С‚РµРєСЃС‚Р°
     window.draw(scoreText);
     window.draw(healthText);
 
-    //отрисовка дефолт мобов
+    //РѕС‚СЂРёСЃРѕРІРєР° РґРµС„РѕР»С‚ РјРѕР±РѕРІ
     if (deffault_enemy_1.get_health() > 0) deffault_enemy_1.Entity_draw(window);
     if (deffault_enemy_2.get_health() > 0) deffault_enemy_2.Entity_draw(window);
     if (deffault_enemy_3.get_health() > 0) deffault_enemy_3.Entity_draw(window);
@@ -1012,7 +1012,7 @@ void drawFunc(sf::RenderWindow& window)
     if (deffault_enemy_7.get_health() > 0) deffault_enemy_7.Entity_draw(window);
     if (deffault_enemy_8.get_health() > 0) deffault_enemy_8.Entity_draw(window);
 
-    //отрирсовка танокв
+    //РѕС‚СЂРёСЂСЃРѕРІРєР° С‚Р°РЅРѕРєРІ
     if (tank_enemy_1.get_health() > 0) tank_enemy_1.Entity_draw(window);
     if (tank_enemy_1.get_health() == 0 && tank1_live == 1) { tank1_live = 0; deffault_enemy_1.set_health(1); }
     if (tank_enemy_2.get_health() > 0) tank_enemy_2.Entity_draw(window);
@@ -1030,7 +1030,7 @@ void drawFunc(sf::RenderWindow& window)
     if (tank_enemy_8.get_health() > 0) tank_enemy_8.Entity_draw(window);
     if (tank_enemy_8.get_health() == 0 && tank8_live == 1) { tank8_live = 0; deffault_enemy_8.set_health(1); }
 
-    //таймер для становления шипов опасными
+    //С‚Р°Р№РјРµСЂ РґР»СЏ СЃС‚Р°РЅРѕРІР»РµРЅРёСЏ С€РёРїРѕРІ РѕРїР°СЃРЅС‹РјРё
     if (timer == 120)
     {
         enemy_spike_sprite_1.setColor(sf::Color::Red);
@@ -1042,13 +1042,13 @@ void drawFunc(sf::RenderWindow& window)
         enemy_spike_sprite_7.setColor(sf::Color::Red);
         enemy_spike_sprite_8.setColor(sf::Color::Red);
     }
-    //обнуление таймера
+    //РѕР±РЅСѓР»РµРЅРёРµ С‚Р°Р№РјРµСЂР°
     if (timer == 150)
     {
         timer = 0;
     }
 
-    //покраска шипов в белый
+    //РїРѕРєСЂР°СЃРєР° С€РёРїРѕРІ РІ Р±РµР»С‹Р№
     if (timer == 0 || timer == 15 || timer == 30 || timer == 45 || timer == 60 || timer == 75 || timer == 90 || timer == 115)
     {
         if (spike_enemy_1.get_health() == 2)
@@ -1092,7 +1092,7 @@ void drawFunc(sf::RenderWindow& window)
             enemy_spike_sprite_8.setColor(sf::Color::Magenta);
     }
 
-    //отрисовка шипов
+    //РѕС‚СЂРёСЃРѕРІРєР° С€РёРїРѕРІ
     if (spike_enemy_1.get_health() > 0) spike_enemy_1.Entity_draw(window);
     if (spike_enemy_2.get_health() > 0) spike_enemy_2.Entity_draw(window);
     if (spike_enemy_3.get_health() > 0) spike_enemy_3.Entity_draw(window);
