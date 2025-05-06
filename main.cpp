@@ -2,7 +2,7 @@
 
 int main()
 {
-	//רנטפע
+	//ׁˆׁ€׀¸ׁ„ׁ‚
 	if (!font.loadFromFile("Fonts/ZurichBoldItalicWin95bt.ttf"))
 	{
 		std::cerr << "Failed to load font!" << std::endl;
