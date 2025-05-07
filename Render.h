@@ -4,11 +4,11 @@
 
 void render_function(sf::RenderWindow& window)
 {
-    //îòðèñîâêà ïåðñîíàæà 
+    //Ð¾Ñ‚Ñ€Ð¸ÑÐ¾Ð²ÐºÐ° Ð¿ÐµÑ€ÑÐ¾Ð½Ð°Ð¶Ð° 
     character.set_sprite(character_sprite);
     character.Entity_draw(window);
 
-    //îòðèñîâêà ïóëè
+    //Ð¾Ñ‚Ñ€Ð¸ÑÐ¾Ð²ÐºÐ° Ð¿ÑƒÐ»Ð¸
     if (bullet_active)
     {
         bullet_sprite.move(0, -bullet_speed * deltaTime);
@@ -20,11 +20,11 @@ void render_function(sf::RenderWindow& window)
         bullet.Entity_draw(window);
     }
 
-    //îòðèñîâêà òåêñòà
+    //Ð¾Ñ‚Ñ€Ð¸ÑÐ¾Ð²ÐºÐ° Ñ‚ÐµÐºÑÑ‚Ð°
     window.draw(scoreText);
     window.draw(healthText);
 
-    //îòðèñîâêà äåôîëò ìîáîâ
+    //Ð¾Ñ‚Ñ€Ð¸ÑÐ¾Ð²ÐºÐ° Ð´ÐµÑ„Ð¾Ð»Ñ‚ Ð¼Ð¾Ð±Ð¾Ð²
     if (deffault_enemy_1.get_health() > 0) deffault_enemy_1.Entity_draw(window);
     if (deffault_enemy_2.get_health() > 0) deffault_enemy_2.Entity_draw(window);
     if (deffault_enemy_3.get_health() > 0) deffault_enemy_3.Entity_draw(window);
@@ -34,7 +34,7 @@ void render_function(sf::RenderWindow& window)
     if (deffault_enemy_7.get_health() > 0) deffault_enemy_7.Entity_draw(window);
     if (deffault_enemy_8.get_health() > 0) deffault_enemy_8.Entity_draw(window);
 
-    //îòðèðñîâêà òàíîêâ
+    //Ð¾Ñ‚Ñ€Ð¸Ñ€ÑÐ¾Ð²ÐºÐ° Ñ‚Ð°Ð½Ð¾ÐºÐ²
     if (tank_enemy_1.get_health() > 0) tank_enemy_1.Entity_draw(window);
     if (tank_enemy_1.get_health() == 0 && tank1_live == 1) { tank1_live = 0; deffault_enemy_1.set_health(1); }
     if (tank_enemy_2.get_health() > 0) tank_enemy_2.Entity_draw(window);
@@ -52,7 +52,7 @@ void render_function(sf::RenderWindow& window)
     if (tank_enemy_8.get_health() > 0) tank_enemy_8.Entity_draw(window);
     if (tank_enemy_8.get_health() == 0 && tank8_live == 1) { tank8_live = 0; deffault_enemy_8.set_health(1); }
 
-    //òàéìåð äëÿ ñòàíîâëåíèÿ øèïîâ îïàñíûìè
+    //Ñ‚Ð°Ð¹Ð¼ÐµÑ€ Ð´Ð»Ñ ÑÑ‚Ð°Ð½Ð¾Ð²Ð»ÐµÐ½Ð¸Ñ ÑˆÐ¸Ð¿Ð¾Ð² Ð¾Ð¿Ð°ÑÐ½Ñ‹Ð¼Ð¸
     if (timer == 120)
     {
         enemy_spike_sprite_1.setColor(sf::Color::Red);
@@ -64,13 +64,13 @@ void render_function(sf::RenderWindow& window)
         enemy_spike_sprite_7.setColor(sf::Color::Red);
         enemy_spike_sprite_8.setColor(sf::Color::Red);
     }
-    //îáíóëåíèå òàéìåðà
+    //Ð¾Ð±Ð½ÑƒÐ»ÐµÐ½Ð¸Ðµ Ñ‚Ð°Ð¹Ð¼ÐµÑ€Ð°
     if (timer == 150)
     {
         timer = 0;
     }
 
-    //ïîêðàñêà øèïîâ â áåëûé
+    //Ð¿Ð¾ÐºÑ€Ð°ÑÐºÐ° ÑˆÐ¸Ð¿Ð¾Ð² Ð² Ð±ÐµÐ»Ñ‹Ð¹
     if (timer == 0 || timer == 15 || timer == 30 || timer == 45 || timer == 60 || timer == 75 || timer == 90 || timer == 115)
     {
         if (spike_enemy_1.get_health() == 2)
@@ -114,7 +114,7 @@ void render_function(sf::RenderWindow& window)
             enemy_spike_sprite_8.setColor(sf::Color::Magenta);
     }
 
-    //îòðèñîâêà øèïîâ
+    //Ð¾Ñ‚Ñ€Ð¸ÑÐ¾Ð²ÐºÐ° ÑˆÐ¸Ð¿Ð¾Ð²
     if (spike_enemy_1.get_health() > 0) spike_enemy_1.Entity_draw(window);
     if (spike_enemy_2.get_health() > 0) spike_enemy_2.Entity_draw(window);
     if (spike_enemy_3.get_health() > 0) spike_enemy_3.Entity_draw(window);
