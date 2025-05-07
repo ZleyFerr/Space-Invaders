@@ -1,12 +1,12 @@
 #pragma once
 #include "global_variables.h"
 
-void infinity_mode() //функция для зацикленного респавна врагов
+void infinity_mode() //С„СѓРЅРєС†РёСЏ РґР»СЏ Р·Р°С†РёРєР»РµРЅРЅРѕРіРѕ СЂРµСЃРїР°РІРЅР° РІСЂР°РіРѕРІ
 {
 
     if (global_score == 2528 * round_count && character.get_health() > 0)
     {
-        //каждый блок отвечает за свой столбец мобов
+        //РєР°Р¶РґС‹Р№ Р±Р»РѕРє РѕС‚РІРµС‡Р°РµС‚ Р·Р° СЃРІРѕР№ СЃС‚РѕР»Р±РµС† РјРѕР±РѕРІ
         deffault_enemy_1.set_health(1);
         spike1_live = true;
         tank1_live = true;
