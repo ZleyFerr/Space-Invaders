@@ -2,17 +2,17 @@
 #include <SFML/Graphics.hpp>
 #include "global_variables.h"
 
+sf::Sprite empty_sprite;
+
 class Entity
 {
 private:
 	int health = 3;
-	int damage;
-	sf::Sprite texture;
-	sf::Sprite sprite;
+	sf::Sprite sprite = empty_sprite;
 public:
-	Entity(int health, int damage, sf::Sprite sprite) :  health(health), damage(damage), sprite(sprite) {};
 	Entity() {};
-	Entity(int health) : health(health){ };
+	Entity(int health) : health(health) {};
+
 	void Entity_draw(sf::RenderWindow& window) { window.draw(sprite); };
 	void set_sprite(sf::Sprite spr) { sprite = spr; };
 	void set_health(int health) { this->health = health; };
