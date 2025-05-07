@@ -1,12 +1,12 @@
 #pragma once
 #include "global_variables.h"
 
-bool check_collision(const sf::Sprite& sprite1, const sf::Sprite& sprite2) //проверка коллизии двух спрайтов
+bool check_collision(const sf::Sprite& sprite1, const sf::Sprite& sprite2) //РїСЂРѕРІРµСЂРєР° РєРѕР»Р»РёР·РёРё РґРІСѓС… СЃРїСЂР°Р№С‚РѕРІ
 {
     return sprite1.getGlobalBounds().intersects(sprite2.getGlobalBounds());
 }
 
-void enemy_deffault_load() //иницинализация и функционал обычных мобов
+void enemy_deffault_load() //РёРЅРёС†РёРЅР°Р»РёР·Р°С†РёСЏ Рё С„СѓРЅРєС†РёРѕРЅР°Р» РѕР±С‹С‡РЅС‹С… РјРѕР±РѕРІ
 {
     enemy_deffault_texture.loadFromFile("Images/deffault_enemy.png");
     enemy_deffault_sprite_1.setTexture(enemy_deffault_texture);
@@ -134,7 +134,7 @@ void enemy_deffault_load() //иницинализация и функционал обычных мобов
     }
 }
 
-void enemy_tank_load() //иницинализация и функционал мобов-танокв
+void enemy_tank_load() //РёРЅРёС†РёРЅР°Р»РёР·Р°С†РёСЏ Рё С„СѓРЅРєС†РёРѕРЅР°Р» РјРѕР±РѕРІ-С‚Р°РЅРѕРєРІ
 {
     enemy_tank_texture.loadFromFile("Images/tank_enemy.png");
     enemy_tank_sprite_1.setTexture(enemy_tank_texture);
@@ -411,7 +411,7 @@ void enemy_tank_load() //иницинализация и функционал мобов-танокв
     }
 }
 
-void enemy_spike_load() //иницинализация и функционал мобов-шипов
+void enemy_spike_load() //РёРЅРёС†РёРЅР°Р»РёР·Р°С†РёСЏ Рё С„СѓРЅРєС†РёРѕРЅР°Р» РјРѕР±РѕРІ-С€РёРїРѕРІ
 {
     enemy_spike_texture.loadFromFile("Images/spike_enemy.png");
     enemy_spike_sprite_1.setTexture(enemy_spike_texture);
