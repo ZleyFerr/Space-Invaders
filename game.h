@@ -6,6 +6,15 @@
 #include "Render.h"
 #include "Eniemes.h"
 
+int font_load()
+{
+    //шрифт
+    if (!font.loadFromFile("Fonts/ZurichBoldItalicWin95bt.ttf"))
+    {
+        std::cerr << "font error!" << std::endl;
+        return -1;
+    }
+}
 void check_borders(sf::Sprite& sprite) //проверка на границу карты
 {
     sf::FloatRect bounds = sprite.getGlobalBounds();
@@ -89,6 +98,7 @@ void text_load() //инициалзия текста вывода очков и 
 
 void preload()
 {
+    font_load();
     text_load();
     back_sound_music();
     character_sprite.setPosition(float(width / 2.4), float(height - 40));
