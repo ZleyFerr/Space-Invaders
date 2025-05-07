@@ -1,5 +1,5 @@
 #pragma once
-#include "SFML//Audio.hpp"
+#include "SFML/Audio.hpp"
 
 sf::Music tank_shot_music;
 sf::Music back_sound;
